@@ -25,15 +25,17 @@
 
     <header>
       <div class="titulo">
-        <h2> <b>MÚSICA</b></h2> <!--mostra a informação quando ela estiver carregada não aparecendo "{{titulo}}" no delay, por exemplo  -->
+        <h2><bold>MÚSICA</bold></h2> <!--mostra a informação quando ela estiver carregada não aparecendo "{{titulo}}" no delay, por exemplo  -->
       </div>
-      <input type="text" name="" ng-modeL="procurado.nome_artista" placeholder="Digite o nome do artista">
     </header>
 
 <main class="container">
 
 <div>
-  <div class="row">
+  <div class = "barra-pesquisa">
+    <input type="text" name="" ng-modeL="procurado.nome_artista" placeholder="Digite o nome do artista">
+  </div>
+  <div class="tabelas">
     <table class="bordered">
     <thead>
     	<tr>
@@ -59,7 +61,7 @@
 </div>
 
 
-  <div class="">
+  <div class="tabela">
     <input type="text" name="" ng-modeL="procurado.nome_playlist" placeholder="Digite o nome da playlist">
     <table>
       <thead>
@@ -102,6 +104,7 @@
         </table>
       </div>
     </div>
+
     <div class="modal-footer">
       <!-- Avalia artista -->
       <a class='dropdown-button btn blue' data-activates='dropdown1'>Avalie o Artista!</a>

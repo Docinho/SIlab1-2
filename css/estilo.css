@@ -1,7 +1,25 @@
 @charset "UTF-8";
 
 h2 {
-  font-family: 'Julius Sans One', sans-serif;
+	font-size: 70px;
+  font-weight: bold;
+	color: #4B0082;
+	text-align: left;
+	font-family: 'Julius Sans One', sans-serif;
+	/*text-shadow: 3px 3px #ff0000;*/
+
+}
+
+body {
+  background-color: rgb(190,190,190);
+}
+
+tabelas {
+  background-color: rgb(112,128,144);
+}
+barra-perquisa {
+  font-weight: bold;
+  color: #000000;
 }
 td img {
   width: 50px;
