@@ -149,8 +149,7 @@ angular.module("modulo1")
           $('#modalDetalhesPlaylist').modal('open');
         }
 
-        $scope.modalAdicionarMusicaPlaylist = function(Musica) {
-          $scope.musicaDaVez = Musica;
+        $scope.modalAdicionarMusicaPlaylist = function() {
           $('#add-musica-playlist').modal('open');
         }
 
@@ -325,6 +324,8 @@ angular.module("modulo1")
         }
 
         $scope.excluir = function() {
+          var click = confirm("Deseja excluir a playlist " + $scope.playlistDaVez + "?");
+          if(click) {
           for (var i = $scope.listaPlaylists.length - 1; i> -1; i--) {
             if($scope.listaPlaylists[i] == $scope.playlistDaVez) {
               $scope.listaPlaylists.splice(i, 1);
@@ -332,17 +333,24 @@ angular.module("modulo1")
             }
           }
         }
+        }
 
-        $scope.addMusicaAPlaylist = function(Playlist) {
-          for (var i = 0; i < $scope.listaPlaylists.length; i++) {
-            if($scope.listaPlaylists[i] == Playlist) {
-              $scope.listaPlaylists[i].musicas.push(musicaDaVez);
-            }
-          }
+        $scope.addMusicaAPlaylist = function(Musica) {
+          $scope.playlistDaVez.musicas.push(Musica);
           $('#modalListaMusica').modal('close');
           $scope.musicaDaVez = {nome_musica:"", nome_artista:"", nome_album:"", ano_lancamento:"", duracao_musica:""};
         }
 
+        $scope.excluirMusica = function(Musica) {
+          var click = confirm("Deseja excluir a música " + Musica.nome_musica + " da playlist " + $scope.playlistDaVez + "?");
+          if(click) {
+            for (var i = 0; i < $scope.playlistDaVez.musicas.length; i++) {
+              if($scope.playlistDaVez.musicas[i].nome_musica == Musica.nome_musica){
+                $scope.playlistDaVez.musicas.splice(i, 1);
+              }
+            }
+          }
+        }
   });
 
     //     .module('app', [])

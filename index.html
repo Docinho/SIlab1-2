@@ -28,6 +28,7 @@
       {{listaArtista}}
       {{listaFavoritos}}
       {{artistaDaVez}}
+      {{listaPlaylists}}
       <input type="text" name="" ng-modeL="procurado.nome_artista" placeholder="Digite o nome do artista">
     </header>
 
@@ -121,12 +122,13 @@
     <div id="modalDetalhesPlaylist" class="modal modal-fixed-footer">
     <div class="modal-content">
       <h4>{{playlistDaVez.nome_playlist}}</h4>
+      <input type="text" name="" ng-modeL="musicaProcurada" placeholder="Digite o nome da música">
       <div class="row">
         <table class="bordered">
           <tbody>
-            <tr ng-repeat="musica in playlistDaVez.musicas">
+            <tr ng-repeat="musica in playlistDaVez.musicas | filter: musicaProcurada">
               <td>{{musica.nome_musica}}</td>
-              <td><a ng-click=excluirMusica(musica) class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">X</i></a></td>
+              <td><a ng-click="excluirMusica(musica)" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">x</i></a></td>
             </tr>
           </tbody>
         </table>
@@ -134,6 +136,7 @@
 
     </div>
     <div class="modal-footer">
+      <a ng-click="modalListaMusica()" class="waves-effect waves-light btn modal-trigger purple adicionaAlbum">add musica</a>
       <a ng-click="excluirPlaylist()" class="waves-effect waves-light btn modal-trigger purple adicionaAlbum">excluir</a>
       <a ng-click = "resetPlaylistDaVez()" href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Fechar</a>
     </div>
@@ -262,14 +265,13 @@
         <div class="modal-content">
           <h4>{{albumDaVez.nome}}</h4>
           <div class="row">
+            <input type="text" name="" ng-modeL="musicaProcurada" placeholder="Digite o nome da música">
             <table class="bordered">
               <tbody>
-                <td>{{albumDaVez.artista}}</td>
-                <td>{{albumDaVez.musicas}}</td>
-                <tr ng-repeat="musica in albumDaVez.musicas">
+                <tr ng-repeat="musica in listaMusicas | filter: musicaProcurada">
                   <td>{{musica.nome_musica}}</td>
                   <td>{{musica.duracao_musica}}</td>
-                  <td></td>
+                  <td><a ng-click=addMusicaAPlaylist(musica) class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a></td>
                 </tr>
                 <!-- <a ng-click="modalAdicionarMusicaPlaylist(musica)" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a> -->
               </tbody>
