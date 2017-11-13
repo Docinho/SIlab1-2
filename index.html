@@ -24,11 +24,9 @@
   <body ng-controller="indexController">
 
     <header>
-      <h2 ng-bind = "titulo"></h2> <!--mostra a informação quando ela estiver carregada não aparecendo "{{titulo}}" no delay, por exemplo  -->
-      {{listaArtista}}
-      {{listaFavoritos}}
-      {{artistaDaVez}}
-      {{listaPlaylists}}
+      <div class="titulo">
+        <h2> <b>MÚSICA</b></h2> <!--mostra a informação quando ela estiver carregada não aparecendo "{{titulo}}" no delay, por exemplo  -->
+      </div>
       <input type="text" name="" ng-modeL="procurado.nome_artista" placeholder="Digite o nome do artista">
     </header>
 
