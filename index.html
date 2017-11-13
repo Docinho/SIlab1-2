@@ -103,7 +103,6 @@
         </table>
       </div>
     </div>
-
     <div class="modal-footer">
       <!-- Avalia artista -->
       <a class='dropdown-button btn blue' data-activates='dropdown1'>Avalie o Artista!</a>
@@ -253,7 +252,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <a ng-click="adicionaMusica(Musica)" href="#botao-adicionar" class="modal-action modal-close waves-effect waves-green btn-flat purple">Adicionar</a>
+            <a ng-click="adicionaMusica(Musica)"  class="modal-action modal-close waves-effect waves-green btn-flat purple">Adiciona Musica</a>
             <a ng-click="resetAddMusica()" href="#botao-cancelar" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancelar</a>
           </div>
         </div>
@@ -266,12 +265,13 @@
             <table class="bordered">
               <tbody>
                 <td>{{albumDaVez.artista}}</td>
-                <td>{{albumDaVez.ano}}</td>
-                <tr ng-repeat="musica in albumDaVez">
+                <td>{{albumDaVez.musicas}}</td>
+                <tr ng-repeat="musica in albumDaVez.musicas">
                   <td>{{musica.nome_musica}}</td>
                   <td>{{musica.duracao_musica}}</td>
-                  <td><a ng-click="modalAdicionarMusicaPlaylist(musica)" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a></td>
+                  <td></td>
                 </tr>
+                <!-- <a ng-click="modalAdicionarMusicaPlaylist(musica)" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a> -->
               </tbody>
             </table>
           </div>
