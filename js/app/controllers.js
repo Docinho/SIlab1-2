@@ -284,34 +284,13 @@ angular.module("modulo1")
             i++;
           }
         }
-        //   var artista = false;
-        //   var indiceArtista = 0;
-        //   while (!artista && indiceArtista < listaFavoritos.length) {
-        //     if(listaFavoritos[indiceArtista].nome_artista == Artista.nome_artista){
-        //       artista = true;
-        //       Artista.favorito = false;
-        //       $listaFavoritos.splice(1, indiceArtista);
-        //     };
-        //     indiceArtista++;
-        //   };
+
         }
 
         $scope.favoritaArtista = function(Artista) {
           Artista.favorito =true;
           $scope.listaFavoritos.push(Artista);
         }
-
-
-        // $scope.favorito = function(Artista) {
-        //   var i = 0;
-        //
-        //   while (i < $scope.listaFavoritos.length ) {
-        //     if($scope.listaFavoritos[i].nome_artista == Artista.nome_artista) {
-        //       // $scope.favoritos(false, Artista);
-        //       return $scope.listaFavoritos[i].favorito;
-        //     }
-        //   }
-        // }
 
         $scope.avaliaArtista = function(Nota) {
           $scope.artistaDaVez.nota = Nota;
@@ -376,17 +355,3 @@ angular.module("modulo1")
           }
         }
   });
-
-    //     .module('app', [])
-    //     .controller('RatingController', RatingController)
-    //     .directive('starRating', starRating);
-    //
-    //   function RatingController() {
-    //     this.rating1 = 5;
-    //     this.rating2 = 2;
-    //     this.isReadonly = true;
-    //     this.rateFunction = function(rating) {
-    //       console.log('Rating selected: ' + rating);
-    //     };
-    //   }
-    //
