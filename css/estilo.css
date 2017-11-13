@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+td img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.collapsible-header h5{
+  font-size: 18px;
+  margin-left: 20px;
+
+}
+
+.teste li {
+  float: left;
+}
+
+.waves-effect waves-light btn modal-trigger purple adicionaAlbum {
+  float: right;
+  float: down;
+}
